@@ -1,0 +1,43 @@
+#imageWrapper {
+	margin-top: 20px;
+}
+.btn {
+	height: 50px;
+	font-size: 24px;
+	line-height: 50px;
+	padding: 0px;
+	margin-top: 20px;
+}
+#uploadForm {
+	padding: 0px;
+}
+#uploadedImage {
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+#loader {
+	height: 2px;
+	background: #5cb85c;
+	width: 0%;
+}
+#pleaseSelect.animate {
+	animation-name: flash;
+	animation-duration: 4s;
+}
+#pleaseSelect {
+	min-height: 75px;
+	font-size: 48px;
+	line-height: 75px;
+}
+@keyframes flash {
+	0% {
+		background: #FFFFFF;
+	}
+	10% {
+		background: #dff0d8;
+	}
+	100% {
+		background: #FFFFFF;
+	}
+}

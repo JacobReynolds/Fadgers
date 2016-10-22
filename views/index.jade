@@ -1,10 +1,14 @@
 extends layout
-
+block append styles
+	link(rel="stylesheet", href="/stylesheets/index.css")
 block content
-	h1#pleaseSelect
-	form#form1
-		input#imgInput(type='file')
-		img#uploadedImage(src='#', alt='your image')
-	button#submitImage Submit
+	h1.text-center#pleaseSelect.col-xs-10.col-xs-offset-1.col-md-8.col-md-offset-2
+	div.col-xs-12.text-center#imageWrapper
+			img#uploadedImage(src='#', alt='your image')
+	form#uploadForm.col-xs-10.col-xs-offset-1.col-md-6.col-md-offset-3
+		label.btn.btn-default.btn-info.form-control
+			| Browse 
+			input#imgInput(type='file',accept="image/*", style='display: none;')
+	button#submitImage.btn.btn-success.col-xs-10.col-xs-offset-1.col-md-6.col-md-offset-3 Submit
 block append scripts
 	script(src="/javascripts/uploader.js")
