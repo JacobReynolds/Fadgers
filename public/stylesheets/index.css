@@ -16,28 +16,77 @@
 	margin-left: auto;
 	margin-right: auto;
 }
-#loader {
-	height: 2px;
-	background: #5cb85c;
-	width: 0%;
-}
-#pleaseSelect.animate {
-	animation-name: flash;
-	animation-duration: 4s;
-}
 #pleaseSelect {
 	min-height: 75px;
 	font-size: 48px;
 	line-height: 75px;
+	border-radius: 10px;
+	margin-top: 20px;
+	font-weight: 700;
+	display: none;
+}
+#goGophers {
+	color: #ffcc33;
+	background: #7a0019;
+	padding: 10px;
+	background-image: url('/images/background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 -690px;
+}
+#dirtySelect {
+	height: 75px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 75px;
+	margin-left: 10px;
+	color: #ffcc33;
+	font-size: 48px;
+	background-color: #7a0019;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	text-align-last: center;
+}
+#dirtySelectWrapper {
+	margin-top: 20px;
+	font-size: 48px;
+	min-height: 75px;
+	line-height: 75px;
+	color: #7a0019;
+	display: inline-block;
+}
+.btn {
+	background: #7a0019 !important;
+	color: #ffcc33;
+	transition: all .25s ease;
+}
+.btn:hover {
+	color: #7a0019 !important;
+	background: #ffcc33 !important;
 }
 @keyframes flash {
 	0% {
-		background: #FFFFFF;
+		background: inherit;
 	}
 	10% {
-		background: #dff0d8;
+		background: #ffcc33;
+		color: #7a0019;
 	}
 	100% {
-		background: #FFFFFF;
+		background: inherit;
+	}
+}
+@keyframe underline {
+	0% {
+		-webkit-transform: scaleX(0);
+		transform: scaleX(0);
+	}
+	50% {
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
+	}
+	100% {
+		-webkit-transform: scaleX(0);
+		transform: scaleX(0);
 	}
 }

@@ -24,12 +24,6 @@ function saveImageFile(buffer, name, callback) {
 	});
 }
 
-function getImageFile(buffer, name) {
-	fs.readFile(name, buffer, function (err) {
-
-	});
-}
-
 function deleteImageFile(imageName) {
 	fs.unlink(imageName, function (err) {
 		if (err) return console.log(err);

@@ -3,13 +3,29 @@ var router = express.Router();
 var jimpHandler = require('../misc/jimpHandler');
 var jimp = require('jimp');
 var crypto = require('crypto')
-var imageDirectory = __dirname + '/../imageDirectory/'
-	/* GET home page. */
+var fs = require('fs')
+var imageDirectory = __dirname + '/../imageDirectory/';
+var sampleImageMimeType = 'image/png';
+/* GET home page. */
 router.get('/', function (req, res) {
 	res.render('index', {
 		title: 'Express'
 	});
 });
+
+router.get('/sampleImage', function (req, res) {
+	fs.readFile(__dirname + '/../sampleImage', function (err, image) {
+		if (!err) {
+			res.writeHead(200, {
+				'Content-Type': sampleImageMimeType
+			});
+			res.end(image, 'binary');
+		} else {
+			res.send(500);
+			console.log(err);
+		}
+	})
+})
 
 router.post('/submitImage', function (req, res) {
 	var imageBuffer = jimpHandler.decodeBase64Image(req.body.image);
