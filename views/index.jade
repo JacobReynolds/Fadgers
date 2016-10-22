@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	h1#pleaseSelect
+	form#form1
+		input#imgInput(type='file')
+		img#uploadedImage(src='#', alt='your image')
+	button#submitImage Submit
+block append scripts
+	script(src="/javascripts/uploader.js")
